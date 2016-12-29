@@ -11,32 +11,33 @@
 **********************************************************************
 
 */
+$( document ).ready(temperature_request());
 //------------------------------------------------------
-function send_text()
+function temperature_request()
 {
-	var text_to_send = $('#text_to_send_id').val();
+	/*var text_to_send = $('#text_to_send_id').val();
 	if(text_to_send.length == 0) return;;
 
 
 	var data_to_send = $.param({'value_to_speech':text_to_send});
 
-	//window.alert("Vars:" + data_to_send);
-
-	$.ajax({url: '/cgi-bin/speech.cgi', cache:false,success: st_success, error:st_error,
-		data:data_to_send,dataType:'text',type:'get'});
+	window.alert("Vars:" + data_to_send);*/
+	var data_to_send = $.param({'temp':"giveme"});
+	$.ajax({url: '/cgi-bin/temperature_show.cgi', cache:false,success: tr_success, error:tr_error,
+		data:"",dataType:'text',type:'get'});
 }
 // --------------------- onFailure -------------------------------------
-function st_error(XMLHttpRequest, textStatus, errorThrown)
+function tr_error(XMLHttpRequest, textStatus, errorThrown)
 {
 	window.alert('ERRORE: Errore in trasmissione\n' + textStatus + ":" + errorThrown);
 }
 // --------------------- onSuccess -------------------------------------
-function st_success(data, textStatus, XMLHttpRequest)
+function tr_success(data, textStatus, XMLHttpRequest)
 {
   var result = data.split("|");
   if(result[0] == "OK"){
-		window.alert("Dati inviati correttamente\n");
-		$('#text_to_send_id').val("");
+		//window.alert("Dati inviati correttamente\n");
+		$('#temperature_received_id').val("");
 	}
   else window.alert("ERRORE:\n" + data);
 }

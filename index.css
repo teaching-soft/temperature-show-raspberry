@@ -1,4 +1,4 @@
-/* cgi_speech program */
+/* cgi_temp_show program */
 
 #main_box {
 	border: 1px solid red;
@@ -17,9 +17,11 @@
 }
 #text_body_id {
 	font-family:"Arial";
+	font-size:1.2em;
+}
+#text_sub_body_id{
+	font-family:"Arial";
 	font-size:1em;
 }
-#text_to_send_id {
-}
-#button_id {
+#temperature_received_id {
 }
