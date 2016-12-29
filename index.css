@@ -1,0 +1,25 @@
+/* cgi_speech program */
+
+#main_box {
+	border: 1px solid red;
+	border-radius:5px;
+	width:100%;
+	text-align:center;
+	padding-top: 10px;
+    /*padding-right: 30px;
+    padding-left: 80px;*/
+    padding-bottom: 50px;
+
+}
+#text_title_id {
+	font-family:"Arial";
+	font-size:2em;
+}
+#text_body_id {
+	font-family:"Arial";
+	font-size:1em;
+}
+#text_to_send_id {
+}
+#button_id {
+}
