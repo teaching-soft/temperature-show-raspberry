@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     char value[10];
     printf("Content-Type:text/html;charset=utf8\n\n");
     // Legge un valore, in caso di errore il msg lo invia prima
-	if(get_value(DEVICE,value) == true)	printf("%s",value);
+	if(get_value(DEVICE,value) == true)	printf("OK|%s",value);
     return EXIT_SUCCESS;
 }
 
@@ -72,6 +72,7 @@ void read_serial_value(int ttys_descriptor,char *value)
             value[pos] = '\0';
             return;
         }
+		if(isdigit(buffer[0]) == 0) continue;
         value[pos] = buffer[0];
         pos++;
         if(pos > MAX_LEN_VALUE){

@@ -37,7 +37,7 @@ function tr_success(data, textStatus, XMLHttpRequest)
   var result = data.split("|");
   if(result[0] == "OK"){
 		//window.alert("Dati inviati correttamente\n");
-		$('#temperature_received_id').val("");
+		$('#temperature_received_id').val(result[1]);
 	}
   else window.alert("ERRORE:\n" + data);
 }
