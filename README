@@ -1,1 +1,3 @@
- 
+Codice per Raspberry, legge una temperatura dalla porta seriale e 
+la mostra in una pagina html. 
+Necessita di un server appositamente configurato 
